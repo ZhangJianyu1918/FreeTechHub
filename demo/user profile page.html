@@ -7,134 +7,299 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>freetechhub</title>
-
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Custom fonts for this template -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_1635546_lpb8m1lca7.css">
-  <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_1635543_0jf6omfa396v.css">
-  <!-- Custom styles for this template -->
-  <link href="css/agency.min.css" rel="stylesheet">
 	<title>{{user_name}} profile page</title>
+
+   <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <style type="text/css">
+  	/***
+User Profile Sidebar by @keenthemes
+A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme
+Licensed under MIT
+***/
+
+body {
+  background: #F1F3FA;
+}
+
+/* Profile container */
+.profile {
+  margin: 20px 0;
+}
+
+/* Profile sidebar */
+.profile-sidebar {
+  padding: 20px 0 10px 0;
+  background: #fff;
+}
+
+.profile-userpic img {
+  float: none;
+  margin: 0 auto;
+  width: 50%;
+  height: 50%;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+}
+
+.profile-usertitle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-usertitle-name {
+  color: #5a7391;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.profile-usertitle-job {
+  text-transform: uppercase;
+  color: #5b9bd1;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.profile-userbuttons {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.profile-userbuttons .btn {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 15px;
+  margin-right: 5px;
+}
+
+.profile-userbuttons .btn:last-child {
+  margin-right: 0px;
+}
+    
+.profile-usermenu {
+  margin-top: 30px;
+}
+
+.profile-usermenu ul li {
+  border-bottom: 1px solid #f0f4f7;
+}
+
+.profile-usermenu ul li:last-child {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li a {
+  color: #93a3b5;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.profile-usermenu ul li a i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.profile-usermenu ul li a:hover {
+  background-color: #fafcfd;
+  color: #5b9bd1;
+}
+
+.profile-usermenu ul li.active {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li.active a {
+  color: #5b9bd1;
+  background-color: #f6f9fb;
+  border-left: 2px solid #5b9bd1;
+  margin-left: -2px;
+}
+
+/* Profile Content */
+.profile-content {
+  padding: 20px;
+  background: #fff;
+  min-height: 460px;
+}
+
+.container{
+	height: 100%;
+	align-content: center;
+}
+
+.image_outer_container{
+	margin-top: auto;
+	margin-bottom: auto;
+	border-radius: 50%;
+	position: relative;
+}
+
+.image_inner_container{
+	border-radius: 50%;
+	padding: 5px;
+background: #833ab4; 
+background: -webkit-linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4); 
+background: linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4);
+}
+.image_inner_container img{
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	border: 5px solid white;
+}
+
+.image_outer_container .green_icon{
+ background-color: #4cd137;
+ position: absolute;
+ right: 30px;
+ bottom: 10px;
+ height: 30px;
+ width: 30px;
+ border:5px solid white;
+ border-radius: 50%;
+}
+  </style>
 </head>
 <body>
 	<!-- Navigation -->
 	<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-	  <h5 class="my-0 mr-md-auto font-weight-normal">NJIT</h5>
+	  <h2 class="my-0 mr-md-auto font-weight-normal text-info">NJIT</h2>
 	  <nav class="my-2 my-md-0 mr-md-3">
-	    <a class="p-2 text-dark" href="#">Features</a>
-	    <a class="p-2 text-dark" href="#">Enterprise</a>
-	    <a class="p-2 text-dark" href="#">Support</a>
-	    <a class="p-2 text-dark" href="#">Pricing</a>
+	    <a class="p-2 text-dark" href="#">Home</a>
+	    <a class="p-2 text-dark" href="#">Search</a>
+	    <a class="p-2 text-dark" href="#">Wirting</a>
 	  </nav>
-	  <a class="btn btn-outline-primary" href="#">Sign up</a>
+   	<div class="justify-content-right">
+			<div class="d-flex justify-content-center h-100">
+				<div class="image_outer_container">
+					<div class="image_inner_container">
+						<img src="https://i.pinimg.com/originals/43/96/61/439661dcc0d410d476d6d421b1812540.jpg">
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 
-	<!--The profile page body-->
-	  <div class="container" style="margin-top:  50px;">
-	  	<div class="row">
-	  	  <div class="col-md-4 order-md-3 mb-3 justify-content-start">
-	  	  	<div class="justify-content-start" style="width: 250px">
-	  	  		<div class="card justify-content-start">
-	  	  	  	<div class="card-body">
-	  	  	  		<img src="#" class='card-img'>
-	  	  	  		<h3 class="card-title">Name</h3>
-	  	  	  		<p class="card-text">Edit your Sginnature</p>
-	  	  	  		<a class="card-link btn btn-outline-info" type='submit'href='#'>Edit Profile</a>
-	  	  	  	</div>
-	  	  		</div>
-	  	  	</div>
-	  		</div>
-	  	<div class="col-md-8 order-md-4">
-	  		<table class="table">
-	  	  	<tr>
-			  		<th>
-			  			<div class="card justify-content-center" style="width: 300px;">
-			  	  		<div class="card">
-			  	  			<div class="card-body">
-			  	  	  		<h3 class="card-title"><a href="#" class="card-link">Title1</a></h3>
-			  	  	  		<p class="card-text">BLog1</p>
-			  	  			</div>
-			  	  		</div>
-			  			</div>
-			  		</th>
-			  		<th>
-	  	  			<div class="card justify-content-end" style="width: 300px">
-	  	  	  		<div class="card">
-	  	  	  			<div class="card-body">
-	  	  	  	  		<h3 class="card-title"><a href="#" class="card-link">Title2</a></h3>
-	  	  	  	  		<p class="card-text">BLog2</p>
-	  	  	  			</div>
-	  	  	  		</div>
-	  	  			</div>
-	  	  		</th>
-	  			</tr>
-	  	  	<tr>
-			  		<th>
-			  			<div class="card justify-content-center" style="width: 300px;">
-			  	  		<div class="card">
-			  	  			<div class="card-body">
-			  	  	  		<h3 class="card-title"><a href="#" class="card-link">Title3</a></h3>
-			  	  	  		<p class="card-text">BLog3</p>
-			  	  			</div>
-			  	  		</div>
-			  			</div>
-			  		</th>
-			  		<th>
-	  	  			<div class="card justify-content-end" style="width: 300px">
-	  	  	  		<div class="card">
-	  	  	  			<div class="card-body">
-	  	  	  	  		<h3 class="card-title"><a href="#" class="card-link">Title4</a></h3>
-	  	  	  	  		<p class="card-text">BLog4</p>
-	  	  	  			</div>
-	  	  	  		</div>
-	  	  			</div>
-	  	  		</th>
-	  			</tr>
-	  	  	<tr>
-			  		<th>
-			  			<div class="card justify-content-center" style="width: 300px;">
-			  	  		<div class="card">
-			  	  			<div class="card-body">
-			  	  	  		<h3 class="card-title"><a href="#" class="card-link">Title5</a></h3>
-			  	  	  		<p class="card-text">BLog5</p>
-			  	  			</div>
-			  	  		</div>
-			  			</div>
-			  		</th>
-			  		<th>
-	  	  			<div class="card justify-content-end" style="width: 300px">
-	  	  	  		<div class="card">
-	  	  	  			<div class="card-body">
-	  	  	  	  		<h3 class="card-title"><a href="#" class="card-link">Title6</a></h3>
-	  	  	  	  		<p class="card-text">BLog6</p>
-	  	  	  			</div>
-	  	  	  		</div>
-	  	  			</div>
-	  	  		</th>
-	  			</tr>  	  
-	  		</table>
-	  	</div>
-	  </div>
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!--
+User Profile Sidebar by @keenthemes
+A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme
+Licensed under MIT
+-->
 
-  <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+	<div class="container">
+    <div class="row profile">
+			<div class="col-md-3">
+				<div class="profile-sidebar">
+					<!-- SIDEBAR USERPIC -->
+					<div class="profile-userpic">
+						<img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt="">
+					</div>
+					<!-- END SIDEBAR USERPIC -->
+					<!-- SIDEBAR USER TITLE -->
+					<div class="profile-usertitle">
+						<div class="profile-usertitle-name">
+							Marcus Doe
+						</div>
+						<div class="profile-usertitle-job">
+							Developer
+						</div>
+					</div>
+					<div class="profile-usermenu justify-item-center">
+				    <div class="button-groud">
+							<button type="button" class="btn button-outline-info" style="margin-left: 55px;"><a class="nav-link" href="#">Overviews</a></button>
+				      <button type="button" class="btn button-outline-info" style="margin-left: 40px;"><a class="nav-link" href="#">Account Setting</a></button>
+				      <button type="button" class="btn button-outline-info" style="margin-left: 75px;"><a class="nav-link" href="#">Task</a></button>
+						</div>
+					<!-- END MENU -->
+						<div class="profile-userbuttons">
+							<button type="button" class="btn btn-outline-success btn-sm"><a href="edit_user_information.html" class="text-info">Change</a></button>
+						</div>
+					</div>
+				</div>
+			</div>			
+			<div class="col-md-9">
+	      <div class="profile-content">
+					<table class="table">
+						<tr>
+							<th>
+								<div class="card">
+									<div class="card-body">
+										<img src="#" class='card-img-top'>
+										<a href="#" class="card-title card-link">Title1</a>
+										<p class="card-text">Blog1</p>
+									</div>
+								</div>
+							</th>
+							<th>
+								<div class="card">
+									<div class="card-body">
+										<img src="#" class="card-img-top">
+										<a href="#" class="card-title card-link">Title2</a>
+										<p class="card-text">Blog2</p>
+									</div>
+								</div>
+							</th>							
+						</tr>
+						<tr>
+							<th>
+								<div class="card">
+									<div class="card-body">
+										<img src="#" class='card-img-top'>
+										<a href="#" class="card-title card-link">Title3</a>
+										<p class="card-text">Blog3</p>
+									</div>
+								</div>
+							</th>
+							<th>
+								<div class="card">
+									<div class="card-body">
+										<img src="#" class="card-img-top">
+										<a href="#" class="card-title card-link">Title4</a>
+										<p class="card-text">Blog4</p>
+									</div>
+								</div>
+							</th>							
+						</tr>
+						<tr>
+							<th>
+								<div class="card">
+									<div class="card-body">
+										<img src="#" class='card-img-top'>
+										<a href="#" class="card-title card-link">Title5</a>
+										<p class="card-text">Blog5</p>
+									</div>
+								</div>
+							</th>
+							<th>
+								<div class="card">
+									<div class="card-body">
+										<img src="#" class="card-img-top">
+										<a href="#" class="card-title card-link">Title6</a>
+										<p class="card-text">Blog6</p>
+									</div>
+								</div>
+							</th>							
+						</tr>
+					</table>   		
+	      </div>
+			</div>
+		</div>
+	</div>
+	<center>
+	<strong>Powered by <a href="http://j.mp/metronictheme" target="_blank">KeenThemes</a></strong>
+	</center>
+	<br>
+	<br>
 
-  <!-- Contact form JavaScript -->
-  <script src="js/jqBootstrapValidation.js"></script>
-  <script src="js/contact_me.js"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="js/agency.min.js"></script>
+ 	<!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>
